@@ -793,6 +793,29 @@ footer p{
     border-top: 1px solid rgb(56, 56, 56);
 }
 
+.button-top{
+    position: absolute;
+    bottom: calc(0px + 7px);
+    right: calc(0px + 5px);
+    width: 35px;
+    height: 30px;
+    background-color: var(--mainColor);
+    color: black;
+    font-size: 25px;
+    font-weight: bold;
+    line-height: 22px;
+    padding-left: 8px;
+    border-radius: 7px;
+    cursor: pointer;
+    user-select: none;
+}
+.button-top:hover{
+    background-color: var(--hoveMainColor);
+}
+.button-top:active{
+    background-color: var(--activeMainColor);
+}
+
 
 /**Fim Footer**/
 

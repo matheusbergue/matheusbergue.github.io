@@ -216,7 +216,13 @@ $(window).on('load',function() {
 });
 
 
+//button top//
 
+$('#buttonTop').click(function() {
+    $('html, body').animate({
+        scrollTop: 0
+    }, 1000)
+})
 
 
 
