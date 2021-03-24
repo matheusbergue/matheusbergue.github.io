@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Dosis:400,700,500|Nunito:300,400,600|Source+Sans+Pro:300,400,500,600,700|Rubik:400,600,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Dosis:400,700,500,600,800|Nunito:300,400,600|Source+Sans+Pro:300,400,500,600,700|Rubik:400,600,700">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <title>Assistir Vingadores: Guerra Infinita Online Dublado - Shotflix</title>
@@ -115,7 +115,7 @@
 
             <div id="share" class="share">
                 <div id="closeShare" class="close">X</div>
-                <div class="whatsapp"><a target="_blank" href="https://api.whatsapp.com/send?text=https://matheusbergue.github.io/filmes/assistir-vingadores-guerra-infinita-online/"></a></div>
+                <div class="whatsapp"><a target="_blank" href="https://api.whatsapp.com/send?text=Homem de Ferro, Thor, Hulk e os Vingadores se unem para combater seu inimigo mais poderoso, o maligno Thanos. Em uma missão para coletar todas as seis pedras infinitas, Thanos planeja usá-las para infligir sua vontade maléfica sobre a realidade.%0Dhttps://matheusbergue.github.io/filmes/assistir-vingadores-guerra-infinita-online/"></a></div>
                 <div class="facebook"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://matheusbergue.github.io/filmes/assistir-vingadores-guerra-infinita-online/"></a></div>
             </div>
 
@@ -137,6 +137,7 @@
             </ul>
         </section>
     </div>
+    <div id="buttonTop" class="button-top" onclick="scrollTopo()">&uarr;</div>
     <span class="copy">Shotflix &copy; 2021 Todos os direitos reservados.</span>
  </footer>
 
@@ -205,28 +206,40 @@
         }
 
         if (player1.length > 4) {
-            players.innerHTML += `<div class="player" onclick="ClickPlayer('${player1}')" style="background-image: url('https://image.tmdb.org/t/p/w300/lmZFxXgJE3vgrciwuDib0N8CfQo.jpg');">
-                                    <div class="play"></div>
-                                    <div class="pelicula"></div>
-                                 </div>`
+            players.innerHTML += `<div class="container-player">
+                                    <div class="player" onclick="ClickPlayer('${player1}')" style="background-image: url('https://image.tmdb.org/t/p/w300/lmZFxXgJE3vgrciwuDib0N8CfQo.jpg');">
+                                        <div class="play"></div>
+                                        <div class="pelicula"></div>
+                                    </div>
+                                    <p>PLAYER 1</p>
+                                </div>`
         }
         if (player2.length > 4) {
-            players.innerHTML += `<div class="player" onclick="ClickPlayer('${player2}')" style="background-image: url('https://image.tmdb.org/t/p/w300/lmZFxXgJE3vgrciwuDib0N8CfQo.jpg');">
-                                    <div class="play"></div>
-                                    <div class="pelicula"></div>
-                                 </div>`
+            players.innerHTML += `<div class="container-player">
+                                    <div class="player" onclick="ClickPlayer('${player2}')" style="background-image: url('https://image.tmdb.org/t/p/w300/lmZFxXgJE3vgrciwuDib0N8CfQo.jpg');">
+                                        <div class="play"></div>
+                                        <div class="pelicula"></div>
+                                    </div>
+                                    <p>PLAYER 2</p>
+                                </div>`
         }
         if (player3.length > 4) {
-            players.innerHTML += `<div class="player" onclick="ClickPlayer('${player3}')" style="background-image: url('https://image.tmdb.org/t/p/w300/lmZFxXgJE3vgrciwuDib0N8CfQo.jpg');">
-                                    <div class="play"></div>
-                                    <div class="pelicula"></div>
-                                 </div>`
+            players.innerHTML += `<div class="container-player">
+                                    <div class="player" onclick="ClickPlayer('${player3}')" style="background-image: url('https://image.tmdb.org/t/p/w300/lmZFxXgJE3vgrciwuDib0N8CfQo.jpg');">
+                                        <div class="play"></div>
+                                        <div class="pelicula"></div>
+                                    </div>
+                                    <p>PLAYER 3</p>
+                                </div>`
         }
         if (player4.length > 4) {
-            players.innerHTML += `<div class="player" onclick="ClickPlayer('${player4}')" style="background-image: url('https://image.tmdb.org/t/p/w300/lmZFxXgJE3vgrciwuDib0N8CfQo.jpg');">
-                                    <div class="play"></div>
-                                    <div class="pelicula"></div>
-                                 </div>`
+            players.innerHTML += `<div class="container-player">
+                                    <div class="player" onclick="ClickPlayer('${player4}')" style="background-image: url('https://image.tmdb.org/t/p/w300/lmZFxXgJE3vgrciwuDib0N8CfQo.jpg');">
+                                        <div class="play"></div>
+                                        <div class="pelicula"></div>
+                                    </div>
+                                    <p>PLAYER 4</p>
+                                </div>`
         }
 
         $('#closeShare').click(function() {

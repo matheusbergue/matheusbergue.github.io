@@ -7,7 +7,7 @@
   
         for (var i = 0; i < results.length; i++) {  // Iterate over the results
           var item = store[results[i].ref];
-          appendString += `<div id="post" class="post">
+          appendString += `<div title="${item.title}" id="post" class="post">
                                 <a id="linkPost" href="${item.url}"></a>
                                 <div class="img-categoria" style="background-image: url('${item.image}');">
                                     <div class="bg-pelicula"></div>

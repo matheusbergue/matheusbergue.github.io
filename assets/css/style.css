@@ -304,14 +304,15 @@ main .container{
 }
 
 .slider .bg-pelicula{
+    position: absolute;
     width: 100%;
     height: 100%;
     background-color: transparent;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.700),
-    rgba(0, 0, 0, 0.400),
+    background-image: linear-gradient(rgba(0, 0, 0, 0.600),
+    rgba(0, 0, 0, 0.300),
       transparent, 
-    rgba(0, 0, 0, 0.400),
-    rgba(0, 0, 0, 0.700));
+    rgba(0, 0, 0, 0.300),
+    rgba(0, 0, 0, 0.600));
 }
 
 .slider:hover p{
@@ -341,7 +342,7 @@ main .container{
 }
 
 .slider p{
-    position: absolute;
+    position: relative;
     top: calc(100% - 40px);
     width: 100%;
     height: 40px;
@@ -361,7 +362,9 @@ main .container{
 }
 .slider a{
     position: absolute;
+    margin-top: -100px;
     padding: 100% 100%;
+    z-index: 1;
 }
 
 
@@ -412,6 +415,7 @@ main .container{
     background: linear-gradient(10deg, #ffae44,#a02b00 ,#ffae44);
     background-size: 300% 300%;
     animation: banner 7s ease infinite;
+    overflow: hidden;
     
 }
 @keyframes banner {
@@ -442,16 +446,36 @@ main .container{
     width: 100%;
     height: 100px;
     position: absolute;
+    background-color: rgba(255, 0, 0, 0.151);
 }
 
 
 .ultimos-filmes{
+    position: relative;
     /*background-color: cadetblue;*/
     width: 100%;
     height: 350px;
     margin-top: 20px;
     position: relative;
     margin-bottom: 50px;
+}
+
+.ultimos-filmes > a{
+    text-transform: uppercase;
+    font-weight: bold;
+    position: absolute;
+    color: var(--textColorSecundario);
+    right: 0;
+    margin-right: 20px;
+    font-size: 14px;
+    text-decoration: none;
+}
+.ultimos-filmes > a:hover{
+    color: var(--mainColor);
+}
+.ultimos-filmes > a > span{
+    font-size: 20px;
+    font-weight: 400;
 }
 
 .ultimos-filmes .scroll-area{
@@ -924,7 +948,7 @@ footer p{
 
 .buttons-filme p{
     font-family: 'Dosis', sans-serif;
-    font-weight: 600;
+    font-weight: 700;
     color: white;
     font-size: 14px;
     margin-top: 4px;
@@ -1109,12 +1133,30 @@ footer p{
     margin-bottom: 15px;
 }
 
+
 .players-area .players{
     display: flex;
     flex-wrap: wrap;
     width: 100%;
     height: auto;
     background-color: rgba(0, 255, 255, 0);
+}
+
+.container-player{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.container-player:hover p{
+    color: var(--mainColor);
+}
+.container-player p{
+    margin: 10px;
+    color: white;
+    font-weight: 800;
+    font-size: 14px;
+    letter-spacing: 1px;
 }
 
 .players .player{
@@ -1164,6 +1206,7 @@ footer p{
     height: 100%;
     background-color: rgba(0, 0, 0, 0.600);
     transition: all 300ms;
+    border-radius: 7px;
 }
 
 
@@ -1590,6 +1633,10 @@ h1{
         font-size: 20px;
     }
 
+    .slider .bg-pelicula{
+        display: none;
+    }
+
 }
 
 
@@ -1680,6 +1727,22 @@ h1{
         height: 300px;
     }
 
+    .slider p{
+        font-size: 16px;
+    }
+
+
+
+    .ultimos-filmes > p, .recomendados > p{
+        font-size: 17px;
+    }
+    .ultimos-filmes > span{
+        font-size: 12px;
+    }
+    .ultimos-filmes > span > span{
+        font-size: 17px;
+    }
+
 
     /*Footer*/
 
@@ -1705,6 +1768,10 @@ h1{
 
     .container .filme-area{
         height: calc(100% - 60px);
+    }
+
+    .container-player p {
+        margin: -10px 0 10px 0;
     }
 
     /*fim pagina post*/
@@ -1776,6 +1843,9 @@ h1{
     .post{
         height: 300px;
     }
-
+    
+    .ultimos-filmes > span{
+        display: none;
+    }
 
 }

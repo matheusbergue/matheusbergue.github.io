@@ -14,13 +14,12 @@ gerarNumerosNaoContidos = (nums) => {
 
 exibirPosts = (qtdePost, modo) => {
     var posts = gerarNumeros(qtdePost);
-    console.log(posts)
 
     if (modo == 'tags') {
 
         for (post in posts) {
             document.write(
-                `<div id="post" class="post">
+                `<div title="${titlePost[posts[post]]}" id="post" class="post">
                     <a id="linkPost" href="${urlPost[posts[post]]}"></a>
                     <div class="img-categoria">
                         <div id="categorias-area" class="categorias-area">
@@ -52,12 +51,12 @@ exibirPosts = (qtdePost, modo) => {
     } else if (modo == 'noTags') {
         for (post in posts) {
             document.write(
-                `<div id="post" class="post">
+                `<div title="${titlePost[posts[post]]}" id="post" class="post">
                     <a id="linkPost" href="${urlPost[posts[post]]}"></a>
                     <div class="img-categoria">
                         <div class="bg-pelicula"></div>
                         <div class="button-assistir">assistir</div>
-                        <img class="img-poster" data-Src="${imagePost[posts[post]]}" data-Alt="${titlePost[posts[post]]}"></img>
+                        <img style="border: 0; outline: none;" class="img-poster" data-Src="${imagePost[posts[post]]}" data-Alt="${titlePost[posts[post]]}"></img>
                     </div><!--img-categoria-->
                     <p>${titlePost[posts[post]]}</p>
                 </div><!--Post-->`

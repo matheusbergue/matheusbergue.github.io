@@ -19,7 +19,6 @@ gerarNumerosNaoContidos = (nums) => {
 
 exibirPosts = () => {
     var posts = gerarNumeros(3);
-    //console.log(posts)
 
     for (post in posts) {
         document.write(

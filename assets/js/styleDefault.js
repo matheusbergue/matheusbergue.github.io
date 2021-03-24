@@ -145,12 +145,12 @@ function tradeSlide( element, skipOption, sizeSkip) {
     let sizeTrade = tamanhoTotal / sizeSkip
 
     if (skipOption == 'anterior') {
-        console.log('anterior acionado')
+        //console.log('anterior acionado')
         if (element.scrollLeft > 0) {
             animateSlide(element, element.scrollLeft - sizeTrade, 500)
         }
     } else if (skipOption == 'proximo') {
-        console.log('proximo acionado')
+        //console.log('proximo acionado')
         if (element.scrollLeft < tamanhoTotal) {
             animateSlide(element, element.scrollLeft + sizeTrade, 500)
         }
@@ -168,15 +168,15 @@ function tradeSlideAuto(element, tempAnimation) {
             if (slideAtual == 1) {
                 slideAtual = 2
                 animateSlide(element, 0, tempAnimation)
-                console.log('slide 1')
+                //console.log('slide 1')
             } else if (slideAtual == 2) {
                 slideAtual = 3
                 animateSlide(element, centerScroll, tempAnimation)
-                console.log('slide 2')
+                //console.log('slide 2')
             } else {
                 slideAtual = 1
                 animateSlide(element, tamanhoTotal, tempAnimation)
-                console.log('slide 3')
+                //console.log('slide 3')
             }
         }, 3000)
     }
@@ -202,7 +202,7 @@ function tradeSlideAuto(element, tempAnimation) {
 $(window).on('load',function() {
     $('.img-poster').each(function(){
              var src = $(this).attr('data-Src');
-             var alt = $(this).attr('data-Alt');
+             var alt = 'Essa imagem mostra a capa do filme '+$(this).attr('data-Alt');
              $(this).after('<img src="'+src+'" alt="'+alt+'" />');
              $(this).remove();
     })
@@ -211,18 +211,18 @@ $(window).on('load',function() {
         var style = $(this).attr('data-url')
         $(this).removeAttr('data-url')
         $(this).attr('style', style)
-        console.log(style)
+        //console.log(style)
     })
 });
 
 
 //button top//
 
-$('#buttonTop').click(function() {
+function scrollTopo() {
     $('html, body').animate({
         scrollTop: 0
     }, 1000)
-})
+}
 
 
 
