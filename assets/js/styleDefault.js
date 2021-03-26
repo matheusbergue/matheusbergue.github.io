@@ -164,21 +164,23 @@ function tradeSlideAuto(element, tempAnimation) {
 
     function setIntervalo() {
         let slideAtual = 3;
-        timeSkip = setInterval(() => {
-            if (slideAtual == 1) {
-                slideAtual = 2
-                animateSlide(element, 0, tempAnimation)
-                //console.log('slide 1')
-            } else if (slideAtual == 2) {
-                slideAtual = 3
-                animateSlide(element, centerScroll, tempAnimation)
-                //console.log('slide 2')
-            } else {
-                slideAtual = 1
-                animateSlide(element, tamanhoTotal, tempAnimation)
-                //console.log('slide 3')
-            }
-        }, 3000)
+        setTimeout(function() {
+            timeSkip = setInterval(() => {
+                if (slideAtual == 1) {
+                    slideAtual = 2
+                    animateSlide(element, 0, tempAnimation)
+                    //console.log('slide 1')
+                } else if (slideAtual == 2) {
+                    slideAtual = 3
+                    animateSlide(element, centerScroll, tempAnimation)
+                    //console.log('slide 2')
+                } else {
+                    slideAtual = 1
+                    animateSlide(element, tamanhoTotal, tempAnimation)
+                    //console.log('slide 3')
+                }
+            }, 3000)
+        },1000)
     }
 
     window.addEventListener('focus', () => {
@@ -223,7 +225,6 @@ function scrollTopo() {
         scrollTop: 0
     }, 1000)
 }
-
 
 
 /******************************** */

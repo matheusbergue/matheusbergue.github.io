@@ -17,7 +17,7 @@ html,body{
     background-color: #141514;
 }
 body{
-    opacity: 1;
+    opacity: 0;
 }
 
 /*variaveis*/
@@ -412,7 +412,7 @@ main .container{
     cursor: pointer;
     border-radius: 7px;
     margin-top: 15px;
-    background: linear-gradient(10deg, #ffae44,#a02b00 ,#ffae44);
+    background: linear-gradient(10deg, #ffbe69,#a02b00 ,#ffc578);
     background-size: 300% 300%;
     animation: banner 7s ease infinite;
     overflow: hidden;
@@ -519,7 +519,7 @@ main .espassamento{
     height: 50px;
     text-transform: uppercase;
     color: var(--textColor);
-    font-size: 16px;
+    font-size: 20px;
     font-weight: bold;
     padding-top: 10px;
     padding-left: 15px;
@@ -529,6 +529,10 @@ main .post-area{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
+    align-items: center;
+}
+.post-area .post{
+    margin-bottom: 50px;
 }
 
 .post{
@@ -825,10 +829,10 @@ footer p{
     height: 30px;
     background-color: var(--mainColor);
     color: black;
-    font-size: 25px;
-    font-weight: bold;
+    font-size: 22px;
+    font-weight: 500;
     line-height: 22px;
-    padding-left: 8px;
+    padding-left: 9px;
     border-radius: 7px;
     cursor: pointer;
     user-select: none;
@@ -860,6 +864,7 @@ footer p{
 }
 
 .bg-pelicula{
+    position: relative;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -1119,18 +1124,30 @@ footer p{
     width: 100%;
     height: auto;
 }
-.players-area span{
+.players-area span:nth-of-type(2){
+    display: inline-block;
     font-family: 'Dosis', sans-serif;
     font-weight: 700;
     font-size: 14px;
+}
+
+span.nota-adblock{
+    margin-bottom: 0 !important;
+    float: right;
+    clear: both;
+    font-weight: 300 !important;
+    font-family: 'Dosis', sans-serif;
+    font-size: 15px;
+    text-align: justify;
 }
 
 .players-area .line{
     width: 100%;
     height: 1px;
     background-color: #bd7100ab;
-    margin-top: 4px;
+    margin-top: 0px;
     margin-bottom: 15px;
+    margin-top: 4px;
 }
 
 
@@ -1141,6 +1158,84 @@ footer p{
     height: auto;
     background-color: rgba(0, 255, 255, 0);
 }
+
+.filme-area .sandbox-area{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    min-height: 30px;
+    background-color: rgba(255, 0, 0, 0);
+    color: var(--mainColor);
+}
+
+/****Button Switch***********/
+
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 46px;
+    height: 18px;
+  }
+  
+  .switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slid {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgb(116, 116, 116);
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slid:before {
+    position: absolute;
+    content: "";
+    height: 24px;
+    width: 24px;
+    left: -1px;
+    bottom: -2px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slid {
+    background-color: var(--hoveMainColor);
+  }
+  
+  input:focus + .slid {
+    box-shadow: 0 0 1px #2196F3;
+  }
+  
+  input:checked + .slid:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+  
+  /* Rounded sliders */
+  .slid.round {
+    border-radius: 34px;
+  }
+  
+  .slid.round:before {
+    border-radius: 50%;
+  }
+
+/************************************************/
+
 
 .container-player{
     display: flex;
@@ -1259,7 +1354,7 @@ footer p{
 
 .filme-area .embed-area{
     width: 100%;
-    height: calc(100% - 60px);
+    height: calc(100% - 65px);
     background-color: rgba(238, 130, 238, 0);
     z-index: 999;
 }
@@ -1541,6 +1636,49 @@ h1{
 /**Fim pagina 404**/
 
 
+/** USO COOKIES **/
+
+.uso-cookies{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    padding: 0 150px;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    min-height: 100px;
+    background-color: var(--mainColor);
+    z-index: 9999;
+    user-select: none;
+}
+
+.uso-cookies p{
+    font-weight: 500;
+}
+
+.button-aceitar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 170px;
+    height: 35px;
+    min-width: 80px;
+    border-radius: 7px;
+    border: 1px solid black;
+    color: black;
+    margin-left: 20px;
+    font-weight: 500;
+}
+.button-aceitar:hover{
+    background-color: black;
+    color: var(--mainColor);
+}
+
+
+/** FIM USO COOKIES **/
+
+
 
 
 
@@ -1637,6 +1775,22 @@ h1{
         display: none;
     }
 
+    /** USO COOKIES **/
+
+    .uso-cookies{
+        flex-direction: column;
+        padding: 10px;
+    }
+    .uso-cookies p{
+        text-align: justify;
+    }
+    .button-aceitar{
+        width: 100px;
+        margin: 20px 10px 5px 10px;
+    }
+
+    /** FIM USO COOKIES **/
+
 }
 
 
@@ -1701,6 +1855,12 @@ h1{
         display: block;
     }
 
+    span.nota-adblock{
+        display: block;
+        float: none;
+        margin-bottom: 10px !important;
+    }
+
     /*fim pagina post*/
 
 
@@ -1733,7 +1893,7 @@ h1{
 
 
 
-    .ultimos-filmes > p, .recomendados > p{
+    .ultimos-filmes > p, .recomendados > p, main .espassamento{
         font-size: 17px;
     }
     .ultimos-filmes > span{
@@ -1760,6 +1920,10 @@ h1{
     /*Fim Footer*/
 
     /*pagina post*/
+
+    .players-area{
+        margin-top: 20 px;
+    }
 
     .players-area .players{
         justify-content: space-evenly;

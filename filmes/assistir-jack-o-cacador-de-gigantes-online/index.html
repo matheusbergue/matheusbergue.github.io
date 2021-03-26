@@ -1,41 +1,42 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-
-
         <!-- Primary Meta Tags -->
     <title>Assistir Jack: O Caçador de Gigantes Online dublado - Shotflix</title>
+    <meta name="robots" content="index, follow">
     <meta name="title" content="Assistir Jack: O Caçador de Gigantes Online dublado - Shotflix">
-    <meta name="description" content="">
+    <meta name="description" content="Jack: O Caçador de Gigantes - Assitir Jack: O Caçador de Gigantes dublado online totalmente de graça HD">
+    <link rel="canonical" href="https://matheusbergue.github.io/filmes/assistir-jack-o-cacador-de-gigantes-online/"/>
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://matheusbergue.github.io/filmes/assistir-jack-o-cacador-de-gigantes-online/">
     <meta property="og:title" content="Assistir Jack: O Caçador de Gigantes Online dublado - Shotflix">
-    <meta property="og:description" content="">
+    <meta property="og:description" content="Jack: O Caçador de Gigantes - Assitir Jack: O Caçador de Gigantes dublado online totalmente de graça HD">
     <meta property="og:image" content="https://image.tmdb.org/t/p/w500/qCp3BLjQc1qZTbw9VrEzuON9NEG.jpg">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://matheusbergue.github.io/filmes/assistir-jack-o-cacador-de-gigantes-online/">
     <meta property="twitter:title" content="Assistir Jack: O Caçador de Gigantes Online dublado - Shotflix">
-    <meta property="twitter:description" content="">
+    <meta property="twitter:description" content="Jack: O Caçador de Gigantes - Assitir Jack: O Caçador de Gigantes dublado online totalmente de graça HD">
     <meta property="twitter:image" content="https://image.tmdb.org/t/p/w500/qCp3BLjQc1qZTbw9VrEzuON9NEG.jpg">
 
-
+    <!-- SEO -->
+    <meta>
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Dosis:400,700,500,600,800|Nunito:300,400,600|Source+Sans+Pro:300,400,500,600,700|Rubik:400,600,700">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <link rel="stylesheet" href="/assets/css/style.css">
+
+    <!-- scripts -->
     <script src="/assets/js/main.js"></script>
     <script src="/assets/js/jquery.js"></script>
     <script src="/assets/js/posts.js"></script>
 </head>
 <body id="body">
-    <link rel="stylesheet" href="/assets/css/style.css">
-
-<!--Cabeçalho-->
+    <!--Cabeçalho-->
 <header>
     <div class="container-header">
       <div class="logo"><a href="/"></a></div><!--logo-->
@@ -80,6 +81,9 @@
                     <div id="imgPoster" class="img-post">
                         <img title="Jack: O Caçador de Gigantes" src="https://image.tmdb.org/t/p/w500/qCp3BLjQc1qZTbw9VrEzuON9NEG.jpg" alt="Essa imagem mostra a capa do filme Jack: O Caçador de Gigantes">
                         <div class="assistir-button">Assistir</div>
+                        <div class="sandbox-area">
+                                   
+                        </div>
                     </div>
                     <div class="info-filme">
                         <h1>Jack: O Caçador de Gigantes</h1>
@@ -100,6 +104,7 @@
                             <p id="sinopse"></p>
                         </div><!--sinopse-->
                         <div class="players-area">
+                            <span class="nota-adblock"><b style="font-size: 13px;">NOTA:</b> Caso o filme não funcione ou apresente uma msg sobre sendbox, desative nosso mini adblok.</span>
                             <span>PLAYERS DISPONÍVEIS</span>
                             <div class="line"></div>
                             <div id="players" class="players">
@@ -132,6 +137,13 @@
                     z-index: -1;
                 ">Carregando Player...</div>
                 <div id="embedArea" class="embed-area"></div>
+                <div class="sandbox-area">
+                    <span style="padding: 10px;font-weight: 600;font-size: 14px;">AD-BLOCK</span>
+                    <label id="labelSwitchSandBox" class="switch">
+                        <input id="sandBoxSwitch" type="checkbox">
+                        <span class="slid round"></span>
+                    </label>
+                </div>
             </div>
 
             <div id="share" class="share">
@@ -143,7 +155,14 @@
 
         </div><!--Container-->
     </main>
-
+    <section id="aceitarCookies" class="uso-cookies">
+    <p>Utilizamos cookies para fornecer uma melhor experiência para nossos usuários e inevitavelmente cookies de terceiros. Para saber mais sobre o uso de cookies,
+        clique <a target="_blank" href="/sobre/#anuciosCookies">aqui</a>. Ao continuar navegando em nosso site, você concorda com a nossa política e todos os <a target="_blank" href="/sobre/#termosDeUso">termos de uso</a>.
+        </p>
+        <div class="button-aceitar" onclick="aceitarTermos()">
+            <span>Aceitar</span>
+        </div>
+</section>
      <!--Footer-->
  <script src="/assets/js/posts.js"></script>
  <footer>
@@ -222,8 +241,12 @@
 
         const players = document.getElementById('players')
  
-        const iframeHtml = function(player) {
-            return `<iframe id="iframe" autoplay; picture-in-picture allowfullscreen scrolling="no" src="${player}" frameborder="0"></iframe>`
+        const iframeHtml = function(player, indice) {
+            let iframes = [
+            `<iframe id="iframe" autoplay; picture-in-picture allowfullscreen scrolling="no" src="${player}" frameborder="0"></iframe>`,
+            `<iframe id="iframe" sandbox="allow-same-origin allow-scripts" autoplay; picture-in-picture allowfullscreen scrolling="no" src="${player}" frameborder="0"></iframe>`
+            ]
+            return iframes[indice]
         }
 
         if (player1.length > 4) {
@@ -282,11 +305,30 @@
 
         })
 
+        //Setar player e sand box//
+
         function ClickPlayer(src) {
-            $('#filmeArea').fadeIn(500, 'swing', function() {
-                $('#embedArea').html(iframeHtml(src))
-            })
+            var sandBoxSwitch = document.getElementById('sandBoxSwitch');
+            if (sandBoxSwitch.checked) {
+                $('#filmeArea').fadeIn(500, 'swing', function() {
+                    $('#embedArea').html(iframeHtml(src, 1))
+                })
+            } else {
+                $('#filmeArea').fadeIn(500, 'swing', function() {
+                    $('#embedArea').html(iframeHtml(src, 0))
+                })
+            }
         }
+        document.getElementById('labelSwitchSandBox').addEventListener('click', function() {
+            let url = $('iframe').attr('src');
+            $('iframe').remove();
+            ClickPlayer(url)
+        })
+        
+
+        
+
+
 
     </script>
 

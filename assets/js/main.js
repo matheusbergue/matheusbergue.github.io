@@ -13,3 +13,21 @@ converter = (minutos) => {
     var textoMinutos = (`00${min}`).slice(-2);
     return `${textoHoras }h ${textoMinutos}m`;
 }
+
+function aceitarTermos() {
+    let termos = document.getElementById('aceitarCookies');
+    termos.style.display = 'none';
+    localStorage.setItem('termosDeUso', 'aceito');
+    
+}
+
+/** verificar termos de uso */
+
+window.onload = function() {
+    if (localStorage.getItem('termosDeUso') != 'aceito') {
+        var termos = document.getElementById('aceitarCookies')
+        termos.style.display = 'flex';
+    }
+}
+
+/**FIM */
