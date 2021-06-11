@@ -1,5 +1,3 @@
-User-agent: * 
-Disallow: /filmes/page/
-Disallow: /search/
-Disallow: /categorias/
-Disallow: /
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Disallow:
